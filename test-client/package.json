@@ -1,0 +1,6 @@
+{
+  "name": "dsh-auto-archive-client-tests",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs"
+}

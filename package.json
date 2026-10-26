@@ -1,0 +1,59 @@
+{
+  "name": "dsh-auto-archive",
+  "version": "0.1.0",
+  "description": "Automatically archives idle DSH conversations after a configurable number of days and clears the expired projection cache of archived sessions, without deleting transcripts or attachments.",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "screenshots.json"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek",
+    "deepseek-harness",
+    "auto-archive",
+    "session",
+    "settings"
+  ],
+  "homepage": "https://github.com/elk-9527/dsh-auto-archive#readme",
+  "bugs": {
+    "url": "https://github.com/elk-9527/dsh-auto-archive/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elk-9527/dsh-auto-archive.git"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\" \"test-client/*.test.mjs\"",
+    "test:e2e": "node e2e/fake-host-e2e.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
